@@ -1,0 +1,6 @@
+*.o
+shijima
+shijima-capture*
+*.pem
+*.key
+build/

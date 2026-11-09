@@ -1,0 +1,17 @@
+[Unit]
+Description=shijima local HTTPS capture proxy
+Documentation=https://github.com/Dai2010/shijima
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h
+ExecStart=%h/.local/bin/shijima -p 8899 --no-console
+Restart=on-failure
+RestartSec=2
+# 只监听回环地址；抓包数据写在运行目录
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target
